@@ -19,9 +19,9 @@ st.set_page_config(
 def load_nlp_model():
     try:
         # 优先尝试加载大模型 (如果用户没装，回退到小模型)
-        return spacy.load("en_core_web_sm")
+        return spacy.load("en_core_web_trf")
     except OSError:
-        st.error("请先安装模型: python -m spacy download en_core_web_sm")
+        st.error("请先安装模型: python -m spacy download en_core_web_trf")
         return None
 
 # B. 翻译功能 (带缓存，防止重复请求)
